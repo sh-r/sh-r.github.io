@@ -140,3 +140,14 @@ span.highlight {
     display: inline-block;
     border-radius: 10px;
 }
+
+.paper-image {
+  width: 100%;
+  height: 160px;        /* you can tune: 140–180px */
+  object-fit: contain; /* or "cover" if you prefer cropping */
+  display: block;
+}
+
+.one {
+  overflow: hidden;
+}
