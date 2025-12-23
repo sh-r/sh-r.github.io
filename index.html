@@ -68,7 +68,9 @@
       <td style="padding:16px;width:30%;vertical-align:middle">
         <div class="one">
           <!-- Add image here later -->
-         <img src="images/tmlr.png" class="paper-image">
+         <img src="images/tmlr.png"
+          class="paper-image enlargeable"
+          onclick="openModal(this)">
         </div>
       </td>
       <td style="padding:8px;width:70%;vertical-align:middle">
@@ -96,7 +98,10 @@
       <td style="padding:16px;width:30%;vertical-align:middle">
         <div class="one">
           <!-- Add image here later -->
-           <img src="images/grepq.png" class="paper-image">
+           <img src="images/grepq.png" 
+            class="paper-image enlargeable"
+            onclick="openModal(this)">
+
         </div>
       </td>
       <td style="padding:8px;width:70%;vertical-align:middle">
@@ -125,7 +130,10 @@
       <td style="padding:16px;width:30%;vertical-align:middle">
         <div class="one">
           <!-- Add image here later -->
-           <img src="images/icvgip.jpg" class="paper-image">
+           <img src="images/icvgip.jpg" 
+            class="paper-image enlargeable"
+            onclick="openModal(this)">
+
         </div>
       </td>
       <td style="padding:8px;width:70%;vertical-align:middle">
@@ -153,7 +161,8 @@
       <td style="padding:16px;width:30%;vertical-align:middle">
         <div class="one">
           <!-- Add image here later -->
-           <img src="images/autonomous.png" class="paper-image">
+           <img src="images/autonomous.png" class="paper-image enlargeable"
+            onclick="openModal(this)">
         </div>
       </td>
       <td style="padding:8px;width:70%;vertical-align:middle">
@@ -183,7 +192,8 @@
       <td style="padding:16px;width:30%;vertical-align:middle">
         <div class="one" style="overflow:hidden;">
           <!-- Add image here later -->
-           <img src="images/yolo.png" class="paper-image">
+           <img src="images/yolo.png" class="paper-image enlargeable"
+            onclick="openModal(this)">
         </div>
       </td>
       <td style="padding:8px;width:70%;vertical-align:middle">
@@ -205,7 +215,10 @@
       </td>
     </tr>
 
-    <div style="height:40px;"></div>
+    <tr>
+      <td colspan="2" style="height:40px;"></td>
+    </tr>
+
 
           </tbody></table>
 
@@ -233,5 +246,32 @@
         </td>
       </tr>
     </table>
+
+    <!-- Image Modal -->
+    <div id="imgModal" class="img-modal" onclick="closeModal()">
+      <img id="modalImg">
+    </div>
+
+    <script>
+      function openModal(img) {
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("modalImg");
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        document.getElementById("imgModal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
+
+
+
   </body>
 </html>
